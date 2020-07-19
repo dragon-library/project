@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Date Countdown</title>
+ 
+
+</head>
+<style>
+  body {
+    text-align: center;
+    padding: 70px 50px;
+    background: #0D1A29;
+    font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+  }
+  #timer {
+    font-size: 3em;
+    font-weight: 400;
+    color: #daf6ff;
+    text-shadow: 0 0 20px #0aafe6, 0 0 20px rgba(10, 175, 230, 0);
+    text-shadow: 0 0 20px #48C8FF;
+    
+  
+  }
+  #timer div {
+    display: inline-block;
+    min-width: 90px;
+    background: rgb(13, 26, 41,0.6); 
+    
+    position: relative;
+    margin: 0 5px;
+   -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
+    width: 100px;
+    height: 80px;
+    
+  }
+  #timer div span {
+    color: gray;
+    display: block;
+    font-size: 0.3em;
+    width: 100px;
+   height: 80px;
+   
+  
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+      Letter-spacing: 0.02em; /*espaços para titulos*/
+      font-weight: 500; /*negritos para titulos*/
+      z-index: 9;
+      box-shadow: none;
+      
+      text-transform: uppercase; /**/
+      box-shadow: 0 0 0 2px rgba(0,0,0,.2);
+  }
+
+  #timer div:last-child {
+    color: #00ff00; 
+      /*  color: #fc6f5c; */
+
+  
+  }
+  h1
+  {
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 3em;
+  }
+  h1 span
+  {
+      font-size: 4em;
+      line-height: .8em;
+  }
+#container {
+  top: 60%;
+  left: 53%;
+  width: 400px;
+  height: 6px;
+  margin: -3px 0px 0px -250px;
+  position: absolute;
+}
+#neon1 {
+  
+  width: 400px;
+  height: 4px;
+  justify-content: center;
+  align-items: center;
+  background-color: #00ff00;
+  border-top: 2px solid #00CC00;
+  border-bottom: 2px solid #00CC00;
+  border-left: 2px solid #008F00;
+  border-right: 2px solid #008F00;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0px 0px 100px 15px #00ff00;
+}
+</style>
+<body>
+  <div class="center">
+    <h1><span>2021</span><br>New Year Countdown</h1>
+    <div id="container">
+      <div id="neon"> </div>
+    </div>
+<!-- partial:index.partial.html -->
+<div id="timer"></div>
+<!-- partial -->
+  
+  <script>
+   
+    
+    function updateTimer() {
+      future  = Date.parse("January 1, 2021 00:00:01");
+      now     = new Date();
+      diff    = future - now;
+      months  = Math.floor( diff / (1000*60*60*24*30) );
+      days  = Math.floor( diff / (1000*60*60*24) );
+      hours = Math.floor( diff / (1000*60*60) );
+      mins  = Math.floor( diff / (1000*60) );
+      secs  = Math.floor( diff / 1000 );
+      
+      mo = zeroPadding(months,2)
+      d = zeroPadding(days-months *30,2);
+      h = zeroPadding(hours - days  * 24,2);
+      m = zeroPadding(mins  - hours * 60,2);
+      s =  zeroPadding(secs  - mins  * 60,2);
+     
+    
+      function zeroPadding(num, digit) {
+        var zero = '';
+        for (var i = 0; i < digit; i++) {
+          zero += '0';
+        }
+        return (zero + num).slice(-digit);
+      }
+    
+      document.getElementById("timer")
+        .innerHTML =
+        '<div>' + mo + '<span>Months</span></div>' +
+          '<div>' + d + '<span>days</span></div>' +
+          '<div>' + h + '<span>hours</span></div>' +
+          '<div>' + m + '<span>minutes</span></div>' +
+          '<div>' + s + '<span>seconds</span></div>' ;
+    }
+    setInterval('updateTimer()', 1000 );
+
+  </script>
+
+</body>
+</html>

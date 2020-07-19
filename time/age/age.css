@@ -1,0 +1,56 @@
+body {
+  text-align: center;
+  padding: 20px 20px;
+/* background: #0D1A29; */
+  font-family: 'Montserrat', sans-serif;
+}
+#tittle {
+  margin-top:10%;
+  font-weight: 400;
+  font-size: 3.5em;
+  letter-spacing: 2px;
+  font-family: "Kanit", sans-serif;
+  color: white;
+  text-shadow: 0 0 20px #48C8FF;
+}
+#timer {
+  font-family: 'Montserrat', sans-serif;
+  margin-top:5%;
+  font-size: 3em;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: white;
+  text-shadow: 0 0 20px #48C8FF;
+  width: 70%;
+  margin-left: 15%;
+  
+ 
+}
+#timer div {
+  display: inline-block;
+  
+  font-size: 1em;
+  margin: 10px;
+  padding: 15px;
+  border: .8px solid #575757;
+	border-radius: 2px;
+  
+  
+
+}
+#timer div span {
+  color: #B1CDF1;
+  display: block;
+  font-size: 0.3em;
+  font-weight: 400;  
+}
+
+#seconds {
+  color:red;
+  text-shadow: 0 0 20px #48C8FF;
+}
+
+
+h3 {
+  font-family: "Kanit", sans-serif;
+}

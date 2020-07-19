@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sider Menu Bar CSS</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+ 
+ 
+
+
+</head>
+<!-- particles effect -->
+<script src="./web/js/particles.min.js"></script>
+<script>
+  window.onload = function() {
+  Particles.init({
+    selector: '#canvas',
+    color: '#888888',
+    connectParticles: true,
+    minDistance: 70
+  });
+  };
+</script>
+<!-- //particles effect -->
+
+<body>
+  <input type="checkbox" id="check">
+  <label for="check">
+    <i class="fas fa-bars" id="btn"></i>
+    <i class="fas fa-times" id="cancel"></i>
+  </label>
+  <div class="sidebar">
+    <header>My App</header>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-qrcode"></i>Home</a></li>
+      <li><a onclick="document.getElementById('frame').src=('back-to-school/index.html')"><i class="fas fa-graduation-cap"></i>วันเกิดลุงวัช</a></li>
+      
+      <li><a onclick="document.getElementById('frame').src=('countdown/birthday_mom.html')"><i class="fas fa-calendar-week"></i>วันเกิดแม่</a></li>
+      
+      <li><a onclick="document.getElementById('frame').src=('countdown/birthday_phan.html')"><i class="fas fa-umbrella-beach"></i>วันเกิดป้าพัณ</a></li>
+      <li><a onclick="document.getElementById('frame').src=('countdown/new-year.html')"><i class="far fa-clock"></i>ปีใหม่</a></li>
+      <li><a href="#"><i class="far fa-question-circle"></i>About</a></li>
+      <li><a href="#"><i class="fas fa-sliders-h"></i>Services</a></li>
+      <li><a href="#"><i class="far fa-envelope"></i>Contact</a></li>
+    </ul>
+  </div>
+  <section id="canvas">
+
+  <iframe id="frame" style="width:100%;border:none;height:100%"></iframe> 
+</section>
+
+
+</body>
+
+</html>
