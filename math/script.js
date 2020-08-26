@@ -35,7 +35,7 @@
       var pos = 0;
       var id = setInterval(frame, 50);
       function frame() {
-        if (pos > 20) {
+        if (pos > 25) {
           clearInterval(id);
           
           document.getElementById("result").focus();
@@ -168,3 +168,6 @@ function clearTime(t) {
     
 }
       
+
+
+
