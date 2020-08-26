@@ -11,38 +11,39 @@ html {
 
 h1 {
     color: #223A5E;
-    font-size:2.5em;
+    font-size: 2.5em;
     font-weight: bolder;
 
 }
 
 /* Column container */
-.row {  
-display: flex;
-flex-wrap: wrap;
+.row {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
 .side {
-flex: 40%;
-background-color: #f1f1f1;
-padding: 10px;
+    flex: 40%;
+    background-color: #f1f1f1;
+    padding: 10px;
 }
 
 /* Main column */
 .main {
-display: flex;
-flex: 60%;
-background-color: #f5f5f5;
-padding: 20px;
+    display: flex;
+    flex: 60%;
+    background-color: #f5f5f5;
+    padding: 20px;
 }
+
 .flex-container-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 
@@ -57,7 +58,7 @@ padding: 20px;
     background-color: #f1f1f1;
     width: 100px;
     margin: 20px;
-    
+
     text-align: center;
     height: 80px;
     font-size: 3em;
@@ -80,76 +81,94 @@ padding: 20px;
 /* ช่องคำตอบ */
 
 .centre {
-position: absolute;
-max-width: 80%;
-height:auto;
-left: 40%;
-margin-top:10em;
+    position: absolute;
+    max-width: 80%;
+    height: auto;
+    left: 40%;
+    margin-top: 10em;
 
 
 }
 
 input[type=text] {
-    
-max-width:50%;
 
-box-sizing: border-box;
-border: none;
-border-bottom: 2px solid red;
-font-size:3em;
-text-align: center;
-font-family: 'Lato', 'sans-serif';
-font-weight: bold;
-color: green;
-height:70px;
-justify-content: center;
-align-items: center;
+    max-width: 50%;
+
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid red;
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Lato', 'sans-serif';
+    font-weight: bold;
+    color: green;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
 }
+
 .white {
-    color:white;
+    color: white;
 }
+
 .success {
-    color:green;
+    color: green;
 }
+
 .danger {
-    color:red;
+    color: red;
 }
+
 .warning {
-    color:yellow;
+    color: yellow;
 }
+
 .bg-info_dark {
     background-color: #223A5E;
 }
+
 .info_dask {
     color: #223A5E;
 }
-.btn {
-transition-duration: 0.4s;
-cursor: pointer;
-margin-left: 1em;
-border-radius: 5px;
 
-}   
+.btn {
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-left: 1em;
+    border-radius: 5px;
+
+}
+
 .box-score {
     padding-top: 10px;
     margin: 0 auto;
 
 }
+
 .score {
-    font-size:1.3em;
+    font-size: 1.3em;
     font-weight: bolder;
     display: inline;
     margin: 10px;
     position: relative;
     padding-top: 10;
- 
+
 }
 
 .table {
-    margin-top:1em;
+    margin-top: 1em;
     justify-content: center;
-align-items: center;
-font-size:1em;
+    align-items: center;
+    
+}
+thead tr {
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #223A5E;
+    color:white;
+}
+tr {
+    font-size: 1.1em;
 }
 
 /* ปุ่มหยุดเวลา */
@@ -158,52 +177,53 @@ font-size:1em;
 #stop_watch {
     text-align: right;
     margin-right: 1.5em;
-    margin-top:1em;
-    
+    margin-top: 1em;
+
 }
+
 .fa {
     padding: 20px;
-  font-size: 30px;
-  width: 30px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px; 
-  background: #3B5998;
-  color: white;
-  border-radius: 50%;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    background: #3B5998;
+    color: white;
+    border-radius: 50%;
 
-  }
-  
-  .fa:hover {
-      opacity: 0.7;
-  }
-  
+}
 
-  
+.fa:hover {
+    opacity: 0.7;
+}
+
+
+
 th {
-    font-size:1em;
+    font-size: 1em;
     text-align: center;
 }
 
 tr {
-    font-size:.8em;
+    font-size: .8em;
     text-align: center;
 }
 
-   .flex-container-grow {
-        display: flex;
-        align-items: stretch;      
+.flex-container-grow {
+    display: flex;
+    align-items: stretch;
 
-    }
-   
+}
 
-    .flex-container-grow>div {
 
-        margin: 0px;
-        text-align: center;
+.flex-container-grow>div {
 
-    }
+    margin: 0px;
+    text-align: center;
 
-    .blank_space {
-        height: 20em;
-    }
+}
+
+.blank_space {
+    height: 20em;
+}

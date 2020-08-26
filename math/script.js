@@ -64,7 +64,7 @@
       var num_result = Number(document.getElementById("result").value); 
       var results = "";
       var answers = Number(num_first) + Number(num_second);
-     
+      var descs = num_first + " + " + num_second + " = " + num_result;
       var scores = document.getElementById("my_score");
 
      
@@ -75,25 +75,33 @@
       m = zeroPadding(mins  - hours * 60,2);
       s =  zeroPadding(secs  - mins  * 60,2);
       m_s = zeroPadding(m_secs - secs * 100,2);
+
+      var table = document.getElementById("myTable");
+      var row = table.insertRow(-1);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
       
       if (num_result == answers) {
-        results =  true;
+        results =
+          "<i class='far fa-check-circle' style='font-size:20px;color:green'></i>";
         result_true++;
       } else {
-        results = false; 
-        result_false++;      }
-        var table = document.getElementById("myTable");
-        var row = table.insertRow(-1);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
+        results = "<i class='material-icons' style='font-size:20px;color:red'>clear</i>"; 
+        row.style.color = "red";
+        descs =  descs + " ["+ answers + "]";
+        cell2.style.color = "#223A5E";
+        
+
+      }
+        
         counts++;
         cell1.innerHTML = counts + "."; 
-        cell2.innerHTML = num_first + " + " + num_second + " = " + num_result;
+        cell2.innerHTML = descs;
         cell3.innerHTML = m + ":"+ s + ":"+ m_s;
         cell4.innerHTML = results;
-       scores.innerHTML =   result_true + '   /  ' + result_false ;
+       scores.innerHTML = result_true + "   /  " + counts;
        
         Lab = 0;
 
