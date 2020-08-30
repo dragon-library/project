@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -13,28 +12,13 @@
 
 </head>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="style.css">
-<script>
-    function GetDefault() {
-        var get_min = Number(localStorage.getItem("min"));
-        var get_max = Number(localStorage.getItem("max"));
 
-        if (get_min < 1) {
-            localStorage.setItem("min", 10);
-    
-        }
-        if (get_max < 1) {
-            localStorage.setItem("max", 100);
-        }
-        document.getElementById("number_min").value = localStorage.getItem("min");
-        document.getElementById("number_max").value =  localStorage.getItem("max");      
-
-    }
-</script>
-<body onload = GetDefault()>
+<body >
     <div class="w3-container">
 
 
@@ -125,16 +109,16 @@
 
                     <div class="controls">
                         <p>Min</p>
-                        <input id="number_min" type="number" />
+                        <input id="number_min" type="number" value="10"/>
                         <p>Max</p>
-                        <input id="number_max" type="number" />
+                        <input id="number_max" type="number" value="100" />
 
                     </div>
                 </div>
                 <br>
                 <footer class="w3-container w3-red">
                     <br>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="SaveData()"
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
                         >Save</button>
                 </footer>
             </div>

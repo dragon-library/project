@@ -4,8 +4,6 @@
   var input = document.getElementById("result");
   var result_true = 0;
   var result_false = 0;
-  var min = new Number(document.getElementById("number_min").value);   
-  var max = new Number(document.getElementById("number_max").value); 
 
   // Execute a function when the user releases a key on the keyboard
   input.addEventListener("keyup", function (event) {
@@ -170,10 +168,6 @@ function clearTime(t) {
     
 }
       
-function SaveData() {
-  var min = new Number(document.getElementById("number_min").value);   
-  var max = new Number(document.getElementById("number_max").value); 
-    
-    localStorage.setItem("min", min);
-    localStorage.setItem("max", max);
-}
+
+
+
