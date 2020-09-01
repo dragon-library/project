@@ -27,8 +27,10 @@
     function myStart() {
         
     var space = ""; 
-    var min = new Number(document.getElementById("number_min").value);   
-    var max = new Number(document.getElementById("number_max").value); 
+
+
+    min = localStorage.getItem("min");
+     max = localStorage.getItem("max");
     document.getElementById('myBtn').style.display = 'none'; 
     document.getElementById('BtnPause').style.display = ""; 
     document.getElementById("result").value = space;
@@ -103,8 +105,7 @@
         cell2.innerHTML = descs;
         cell3.innerHTML = m + ":"+ s + ":"+ m_s;
         cell4.innerHTML = results;
-       scores.innerHTML = result_true + "   /  " + counts;
-       
+       scores.innerHTML = result_true + "   /  " + counts;       
         Lab = 0;
 
    

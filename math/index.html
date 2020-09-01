@@ -17,6 +17,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="style.css">
+<<<<<<< Updated upstream
 <script>
     function GetDefault() {
         var get_min = Number(localStorage.getItem("min"));
@@ -35,6 +36,14 @@
     }
 </script>
 <body onload = GetDefault()>
+=======
+
+<script>
+      var min = new Number(document.getElementById("number_min").value);
+      var max = new Number(document.getElementById("number_max").value);
+</script>
+<body onload="saveDefault()">
+>>>>>>> Stashed changes
     <div class="w3-container">
 
 
@@ -139,6 +148,17 @@
                 </footer>
             </div>
         </div>
+<<<<<<< Updated upstream
+=======
+      </div>
+      <br>
+      <footer class="w3-container w3-red">
+        <br>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="saveDefault()">Save</button>
+      </footer>
+    </div>
+  </div>
+>>>>>>> Stashed changes
 
 
 
