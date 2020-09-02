@@ -1,11 +1,12 @@
   document.getElementById('BtnPause').style.display = 'none'; 
   var counts = 0;
   var Lab = 0;
-  var input = document.getElementById("result");
+  var input = document.getElementById("first_digit");
   var result_true = 0;
   var result_false = 0;
   var min = new Number(document.getElementById("number_min").value);   
   var max = new Number(document.getElementById("number_max").value); 
+  // document.getElementById("first_digit").innerHTML = 0;
 
   // Execute a function when the user releases a key on the keyboard
   input.addEventListener("keyup", function (event) {
@@ -26,14 +27,14 @@
 
     function myStart() {
         
-    var space = ""; 
-
-
-    min = localStorage.getItem("min");
-     max = localStorage.getItem("max");
+    var space = 0; 
+    var min = new Number(document.getElementById("number_min").value);   
+    var max = new Number(document.getElementById("number_max").value); 
     document.getElementById('myBtn').style.display = 'none'; 
     document.getElementById('BtnPause').style.display = ""; 
-    document.getElementById("result").value = space;
+    document.getElementById("first_digit").innerHTML = '0';
+    document.getElementById("second_digit").innerHTML  = '0';
+    document.getElementById("third_digit").innerHTML  = '0';
     
           
       var pos = 0;
@@ -42,7 +43,7 @@
         if (pos > 25) {
           clearInterval(id);
           
-          document.getElementById("result").focus();
+          document.getElementById("first_digit").focus();
           timer(t);
 
         } else {
@@ -65,7 +66,10 @@
     clearTime(t);
       var num_first = document.getElementById("number_first").innerHTML;   
       var num_second = document.getElementById("number_second").innerHTML; 
-      var num_result = Number(document.getElementById("result").value); 
+      var first_result = (document.getElementById("first_digit").innerHTML); 
+      var second_result = (document.getElementById("second_digit").innerHTML); 
+      var third_result = (document.getElementById("third_digit").innerHTML); 
+      var num_result = Number(third_result + second_result + first_result);
       var results = "";
       var answers = Number(num_first) + Number(num_second);
       var descs = num_first + " + " + num_second + " = " + num_result;
@@ -105,7 +109,8 @@
         cell2.innerHTML = descs;
         cell3.innerHTML = m + ":"+ s + ":"+ m_s;
         cell4.innerHTML = results;
-       scores.innerHTML = result_true + "   /  " + counts;       
+       scores.innerHTML = result_true + "   /  " + counts;
+       
         Lab = 0;
 
    
@@ -172,9 +177,28 @@ function clearTime(t) {
 }
       
 function SaveData() {
-  var min = new Number(document.getElementById("number_min").value);   
-  var max = new Number(document.getElementById("number_max").value); 
+  var min = new Number(document.getElementById("number_min").innerHTML);   
+  var max = new Number(document.getElementById("number_max").innerHTML); 
     
     localStorage.setItem("min", min);
     localStorage.setItem("max", max);
+}
+
+function add_digit(ids) {
+  var digits_add = Number(document.getElementById(ids).innerHTML);
+  digits_add++;
+  if (digits_add > 9) {
+    digits_add = 0;
+  }
+  document.getElementById(ids).innerHTML = digits_add;
+}
+
+function minus_digit(ids) {
+  var digits_minus = Number(document.getElementById(ids).innerHTML);
+  digits_minus--;
+  if (digits_minus < 0) {
+    digits_minus = 9;
+  }
+  document.getElementById(ids).innerHTML = digits_minus;
+
 }

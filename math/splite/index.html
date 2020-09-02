@@ -11,45 +11,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <script src="onloads.js"></script>
+
 </head>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="style.css">
-<script>
-    function GetDefault() {
-        var get_min = Number(localStorage.getItem("min"));
-        var get_max = Number(localStorage.getItem("max"));
 
-        if (get_min < 1) {
-            localStorage.setItem("min", 10);
-    
-        }
-        if (get_max < 1) {
-            localStorage.setItem("max", 100);
-        }
-        document.getElementById("number_min").value = localStorage.getItem("min");
-        document.getElementById("number_max").value =  localStorage.getItem("max");      
 
-    }
-</script>
 <body onload = GetDefault()>
     <div class="w3-container">
-
-
-
-
-        <!--splite screen-->
-
+                <!--splite screen-->
         <div class="flex-container-grow bg-info_dark text-light">
             <div style="flex-grow: 4">
-
                 <div class="w3-bar  w3-large">
                     <a href="#" class="w3-bar-item w3-button"><i class="material-icons" style="font-size:36px"
                             onclick="document.getElementById('id01').style.display= 'block' ">settings</i></a>
                 </div>
-
             </div>
             <!--score center-->
             <div style="flex-grow: 4">
@@ -64,9 +44,7 @@
                     <h5 class="green"><time></time></h5>
                 </div>
             </div>
-
         </div>
-
         <div class="flex-container-grow">
             <!--Left form-->
             <div style="flex-grow: 6">
@@ -75,21 +53,46 @@
                     <div id="number_first"></div>
                     <p id="symbol">+</p>
                     <div id="number_second"></div>
-                </div>
-
-               
-                
+                </div>              
                 <div class="flex-container-row">
-                    
+      <!--     <input type="text" id="result" name="myInput" autocomplete="off"> -->
 
-                    <input type="text" id="result" name="myInput" autocomplete="off">
+
+
+       <!-- third digit-->
+       <div class="w3-container" style="width:10%">                       
+        <button  id = "btn_a3"  class="w3-button w3-block  btn-add" onclick= "add_digit('third_digit')">+</button>
+        <div class="w3-container">
+            <h2 id = "third_digit"></h2>                     
+        </div>
+       <button  id = "btn_m3" class="w3-button w3-block  btn-minus" onclick= "minus_digit('third_digit')">-</button>
+    </div>
+<!-- third digit-->
+
+      <!-- second digit-->
+      <div class="w3-container" style="width:10%">                       
+        <button  id = "btn_a2" class="w3-button w3-block  btn-add" onclick= "add_digit('second_digit')">+</button>
+        <div class="w3-container">
+            <h2 id = "second_digit"></h2>                     
+        </div>
+       <button  id = "btn_m2"  class="w3-button w3-block  btn-minus" onclick= "minus_digit('second_digit')">-</button>
+    </div>
+<!-- second digit-->
+
+            <!-- first digit-->
+                    <div class="w3-container" style="width:10%">                       
+                        <button id = "btn_a1" class="w3-button w3-block btn-add" onclick= "add_digit('first_digit')">+</button>
+                        <div class="w3-container">
+                            <h2 id = "first_digit"></h2>                     
+                        </div>
+                       <button  id = "btn_m1"  class="w3-button w3-block  btn-minus" onclick= "minus_digit('first_digit')">-</button>
+                    </div>
+                <!-- first digit-->
 
                     <button id="myBtn" class="btn  btn-outline-success" onclick="myStart()">Start</button>
                     <button id="BtnPause" class="btn btn-outline-danger" onclick="CheckResult()">Pause</button>
-                </div>
-              
+                </div>              
             </div>
-
             <!--Right form-->
             <div style="flex-grow: 6">
                 <table id="myTable" class="table table-bordered table-striped">
@@ -109,11 +112,8 @@
             </div>
         </div>
 
-
         <!--modal-->
-
         <!---->
-
         <div id="id01" class="w3-modal w3-animate-opacity">
             <div class="w3-modal-content w3-card-4">
                 <header class="w3-container w3-red">
@@ -122,7 +122,6 @@
                     <h2>Setting</h2>
                 </header>
                 <div class="w3-container">
-
                     <div class="controls">
                         <p>Min</p>
                         <input id="number_min" type="number" />
@@ -139,6 +138,12 @@
                 </footer>
             </div>
         </div>
+
+
+
+
+
+
 
         <script src="script.js"></script>
 </body>
